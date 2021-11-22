@@ -43,6 +43,14 @@ WildRydes.map = WildRydes.map || {};
         var pronoun;
         console.log('Response received from API: ', result);
         unicorn = result.Unicorn;
+        if (unicorn.Name == "Rocinante") {
+            unicorn.Name = "Cameron Vigil 1";
+        } else if (unicorn.Name == "Bucephalus") {
+            unicorn.Name = "Cameron Vigil 2";
+        
+        } else {
+            unicorn.Name = "Cameron Vigil 3";
+        }
         pronoun = unicorn.Gender === 'Male' ? 'his' : 'her';
         displayUpdate(unicorn.Name + ', your ' + unicorn.Color + ' unicorn, is on ' + pronoun + ' way.');
         animateArrival(function animateCallback() {
